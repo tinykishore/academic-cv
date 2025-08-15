@@ -329,3 +329,6 @@ TSWLatexianTemp*
 .DS_Store
 .vscode/
 .idea/
+
+# PDFs
+*.pdf
