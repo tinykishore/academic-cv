@@ -1,0 +1,129 @@
+\documentclass{academic-cv}
+
+\begin{document}
+
+% CV Header
+% Usage: \cvheader{first_name}{last_name}{address}{email}{linkedin (placeholder ok)}{github (placeholder ok)}{website (placeholder ok)}
+% All slots except email can show placeholder text while still being clickable with actual URLs.
+\cvheader{John}{Doe}{123 Ave, SL, CA}{%
+    \emaillink{john.doe@university.edu}% clickable email
+}{%
+    \linkedinplaceholder{LinkedIn}{johndoe}% clickable placeholder
+}{%
+    \githubplaceholder{GitHub}{johndoe}% clickable placeholder
+}{%
+    \websiteplaceholder{Website}{johndoe.com}% clickable placeholder
+}
+
+% Education Section
+\cvsection{Education}
+
+\cvitem{Ph.D. in Computer Science}{2020 -- 2024}{University of Excellence}{%
+    Dissertation: ``Advanced Machine Learning Techniques for Natural Language Processing''\\
+    Advisor: Dr. Jane Smith\\
+    GPA: 3.9/4.0
+}
+
+\cvitem{M.S. in Computer Science}{2018 -- 2020}{University of Excellence}{%
+    Thesis: ``Deep Learning Applications in Computer Vision''\\
+    GPA: 3.8/4.0
+}
+
+\cvitem{B.S. in Computer Science}{2014 -- 2018}{State University}{%
+    Magna Cum Laude, Phi Beta Kappa\\
+    GPA: 3.7/4.0
+}
+
+% Research Experience
+\cvsection{Research Experience}
+
+\cvitem{Research Assistant}{2020 -- 2024}{Machine Learning Lab, University of Excellence}{%
+    \begin{cvlist}
+        \item Developed novel algorithms for natural language understanding
+        \item Published 5 papers in top-tier conferences (ACL, EMNLP, ICML)
+        \item Mentored 3 undergraduate research students
+        \item Collaborated with industry partners on applied research projects
+    \end{cvlist}
+}
+
+\cvitem{Summer Research Intern}{Summer 2019}{Tech Giants Research Lab}{%
+    \begin{cvlist}
+        \item Worked on large-scale distributed machine learning systems
+        \item Implemented and optimized neural network architectures
+        \item Contributed to open-source machine learning frameworks
+    \end{cvlist}
+}
+
+% Publications
+\cvsection{Publications}
+
+\cvsubsection{Conference Papers}
+
+\cvsimpleitem{Doe, J., Smith, J. (2024). ``Advanced Techniques in Neural Language Models.'' \textit{Proceedings of ACL 2024}. pp. 123-135.}{}
+
+\cvsimpleitem{Doe, J., Johnson, A., Smith, J. (2023). ``Efficient Training of Large Language Models.'' \textit{Proceedings of EMNLP 2023}. pp. 456-470.}{}
+
+\cvsimpleitem{Doe, J., Brown, K. (2023). ``Cross-lingual Transfer Learning for Low-Resource Languages.'' \textit{Proceedings of ICML 2023}. pp. 789-802.}{}
+
+\cvsubsection{Journal Papers}
+
+\cvsimpleitem{Doe, J., Smith, J., Wilson, R. (2024). ``A Comprehensive Survey of Transformer Architectures.'' \textit{Journal of Machine Learning Research}, 25(1), 1-45.}{}
+
+% Teaching Experience
+\cvsection{Teaching Experience}
+
+\cvitem{Teaching Assistant}{Fall 2021, Spring 2022}{CS 101: Introduction to Computer Science}{%
+    \begin{cvlist}
+        \item Conducted weekly lab sessions for 50+ students
+        \item Graded assignments and provided detailed feedback
+        \item Held office hours and provided one-on-one tutoring
+        \item Received excellent teaching evaluations (4.8/5.0)
+    \end{cvlist}
+}
+
+\cvitem{Guest Lecturer}{Spring 2023}{CS 701: Advanced Machine Learning}{%
+    \begin{cvlist}
+        \item Delivered lectures on transformer architectures and attention mechanisms
+        \item Designed and graded midterm examination
+        \item Mentored final projects for graduate students
+    \end{cvlist}
+}
+
+% Awards and Honors
+\cvsection{Awards and Honors}
+
+\cvsimpleitem{Outstanding Graduate Student Award}{2024}
+\cvsimpleitem{Best Paper Award, EMNLP 2023}{2023}
+\cvsimpleitem{University Fellowship}{2020-2024}
+\cvsimpleitem{Phi Beta Kappa}{2018}
+\cvsimpleitem{Dean's List}{2016-2018}
+
+% Skills
+\cvsection{Technical Skills}
+
+\cvsubsection{Programming Languages}
+Python, Java, C++, R, JavaScript, SQL
+
+\cvsubsection{Machine Learning Frameworks}
+PyTorch, TensorFlow, Scikit-learn, Hugging Face Transformers
+
+\cvsubsection{Tools and Technologies}
+Git, Docker, Kubernetes, AWS, Google Cloud Platform, LaTeX
+
+% Professional Service
+\cvsection{Professional Service}
+
+\cvsubsection{Reviewer}
+\begin{cvlist}
+    \item Association for Computational Linguistics (ACL) 2023, 2024
+    \item Conference on Empirical Methods in Natural Language Processing (EMNLP) 2022, 2023
+    \item International Conference on Machine Learning (ICML) 2023, 2024
+\end{cvlist}
+
+\cvsubsection{Organizing Committee}
+\begin{cvlist}
+    \item Student Volunteer Coordinator, ACL 2023
+    \item Publicity Chair, Graduate Student Conference 2022
+\end{cvlist}
+
+\end{document}
