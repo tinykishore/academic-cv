@@ -37,6 +37,12 @@
         UprightFont = *-Light
     ]
     
+    \newfontfamily\intermedium{Inter}[
+        Path = ./fonts/,
+        Extension = .ttf,
+        UprightFont = *-Medium
+    ]
+    
     \newfontfamily\interextrabold{Inter}[
         Path = ./fonts/,
         Extension = .ttf,
@@ -46,6 +52,7 @@
     % Fallback to system fonts or similar
     \setmainfont{Inter}[Scale=1.0]
     \newfontfamily\interlight{Inter Light}[Scale=1.0]
+    \newfontfamily\intermedium{Inter Medium}[Scale=1.0]
     \newfontfamily\interextrabold{Inter ExtraBold}[Scale=1.0]
 }
 
@@ -107,9 +114,8 @@
     % Full width divider line (approx 2px thickness)
     \vspace{6pt}
     {\color{linkdivider}\rule{\textwidth}{1.5pt}}% 1.5pt ≈ 2px visual weight
-    \vspace{10pt}
+
     \end{center}
-    \vspace{1em}
 }
 
 % Command for creating a link with icon and proper spacing
@@ -191,14 +197,14 @@
     {\Large\bfseries #1}
     \vspace{0.5em}
     \hrule
-    \vspace{0.5em}
+
 }
 
 % Subsection command
 \newcommand{\cvsubsection}[1]{%
     \vspace{0.5em}
     {\large\bfseries #1}
-    \vspace{0.3em}
+ 
 }
 
 % Item command for CV entries
@@ -228,4 +234,76 @@
     \setlength{\parsep}{0pt}
 }{%
     \end{itemize}
+}
+
+% Section command - general purpose section formatting
+\renewcommand{\section}[1]{%
+    \noindent{\fontsize{18pt}{16pt}\selectfont\interextrabold\color{linkcolor}#1}\\%
+}
+
+% Reference item command
+% Usage: \referenceitem{Name}{Address}{Email}{Website}
+\newcommand{\referenceitem}[4]{%
+    % Icon aligned with the name to give list item appearance
+    \noindent\IfFileExists{images/list.png}{%
+        \raisebox{-0.4em}{\includegraphics[height=1.6em]{images/list.png}}%
+        \hspace{0.25em}% spacing after icon
+    }{}%
+    % Name: #000000 HEX, Inter font, Bold, 12pt
+    \hspace{0.5em }{\fontsize{14pt}{14pt}\selectfont\bfseries\color{black}#1}
+    
+    % Address: #000000 HEX, Inter font, Medium weight, 9pt
+    \hspace{0.8em}{\fontsize{10pt}{11pt}\selectfont\intermedium\color{black}#2}
+    
+    % Email and Website on same line, separated by | with 0.5em spacing
+    \hspace{0.8em}{\fontsize{11pt}{12pt}\selectfont\intermedium\color{linkcolor}%
+        % Email: same color as header link, Inter medium italic 10pt, no icon
+        {\itshape\href{mailto:#3}{\underline{#3}}}%
+        % Separator with 0.5em spacing on each side (not italic)
+        \hspace{0.5em}{\color{linkcolor}|}\hspace{0.5em}%
+        % Website: same color as header link, Inter medium italic 10pt, with outbound-link icon
+        {\itshape\href{https://#4}{%
+            \underline{#4}%
+            \IfFileExists{images/outbound-link.png}{%
+                \hspace{0.25em}% spacing before icon
+                \raisebox{-0.3em}{\includegraphics[height=1.4em]{images/outbound-link.png}}%
+                \hspace{0.25em}% spacing after icon
+            }{}%
+        }}%
+    }
+    \vspace{0.5em}\\
+}
+
+
+% Language item command
+% Usage: \languageitem{Name}{Address}{Email}{Website}
+\newcommand{\languageitem}[4]{%
+    % Icon aligned with the name to give list item appearance
+    \noindent\IfFileExists{images/list.png}{%
+        \raisebox{-0.4em}{\includegraphics[height=1.6em]{images/list.png}}%
+        \hspace{0.25em}% spacing after icon
+    }{}%
+    % Name: #000000 HEX, Inter font, Bold, 12pt
+    \hspace{0.5em}{\fontsize{14pt}{14pt}\selectfont\bfseries\color{black}#1}
+    
+    % Address: #000000 HEX, Inter font, Medium weight, 9pt
+    \hspace{0.8em}{\fontsize{10pt}{11pt}\selectfont\intermedium\color{black}#2}
+    
+    % Email and Website on same line, separated by | with 0.5em spacing
+    \hspace{0.8em}{\fontsize{11pt}{12pt}\selectfont\intermedium\color{linkcolor}%
+        % Email: same color as header link, Inter medium italic 10pt, no icon
+        {\itshape\href{mailto:#3}{\underline{#3}}}%
+        % Separator with 0.5em spacing on each side (not italic)
+        \hspace{0.5em}{\color{linkcolor}|}\hspace{0.5em}%
+        % Website: same color as header link, Inter medium italic 10pt, with outbound-link icon
+        {\itshape\href{https://#4}{%
+            \underline{#4}%
+            \IfFileExists{images/outbound-link.png}{%
+                \hspace{0.25em}% spacing before icon
+                \raisebox{-0.3em}{\includegraphics[height=1.4em]{images/outbound-link.png}}%
+                \hspace{0.25em}% spacing after icon
+            }{}%
+        }}%
+    }
+    \vspace{0.5em}\\
 }
